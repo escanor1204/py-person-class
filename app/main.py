@@ -14,7 +14,7 @@ def create_person_list(people: list[dict]) -> list[Person]:
         new_person = Person(person.get("name"), person.get("age"))
         person_list.append(new_person)
     for person in people:
-        current_person = Person.people[person["name"]]
+        current_person = Person.people[person.get("name")]
         if "wife" in person and (person.get("wife") is not None):
             wife_object = Person.people[person.get("wife")]
             current_person.wife = wife_object
